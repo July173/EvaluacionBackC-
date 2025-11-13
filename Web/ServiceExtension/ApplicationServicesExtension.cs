@@ -16,7 +16,7 @@ namespace Web.ServiceExtension
                 options.AddPolicy("AllowSpecificOrigins", builder =>
                 {
                     var allowedOrigins = configuration.GetSection("Cors:AllowedOrigins").Get<string[]>()
-                        ?? new[] { "http://localhost:5173", "http://localhost:3000" }; // Por defecto para React o Vite
+                        ?? new[] { "http://localhost:5173", "http://localhost:3000", "http://localhost:8080" }; // Por defecto para React, Vite y pruebas en puerto 8080
 
                     builder.WithOrigins(allowedOrigins)
                            .AllowAnyMethod()
